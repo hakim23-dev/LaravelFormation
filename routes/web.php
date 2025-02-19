@@ -15,7 +15,4 @@ Route::get('/home',[HomeController::class,'home'])->name('home');
 
 Route::view('/about','about');
 
-Route::get('/posts/{id}/{book?}',function($id){
-    $posts=[1=>['title'=>'laravel'],2=>['title'=>'react']];
-    return view('/posts.posts',['data'=>$posts[$id]]);
-});
+Route::get('/blog/{id}/{book?}',[HomeController::class,'blog'])->name('blog');
